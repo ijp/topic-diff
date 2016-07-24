@@ -109,6 +109,9 @@
                 y (1- y)))
         (unless (and (= x x-start) (= y y-start))
           (push (substring s1 x x-start) out))))
+
+    (unless (and (zerop x) (zerop y))
+      (push (cons (substring s1 0 x) (substring s2 0 y)) out))
     out))
 
 (provide 'lcs)
